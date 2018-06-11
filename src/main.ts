@@ -1,7 +1,8 @@
 import * as $ from 'jquery';
-import * as haha from './test';
-import hehe = haha.myTest;
-import {Sprite,WebGL,Event} from './LayaAir';
+import {Sprite,WebGL,Event,Handler} from './LayaAir';
+import { Ui } from './ui/layaUI.max.all';
+import { TestPageView } from './View/TestPageView';
+
 Laya.init(1280,720,WebGL);
 var sp = new Sprite();
 sp.graphics.drawRect(0,0,100,100,"red");
@@ -12,7 +13,13 @@ sp.on(Event.MOUSE_DOWN,this,()=>{
 sp.on(Event.MOUSE_UP,this,()=>{
     sp.stopDrag();
 })
+
+Laya.loader.load("../bin/res/atlas/comp.atlas",Handler.create(this,()=>{
+    var t:TestPageView = new TestPageView();
+    Laya.stage.addChild(t);
+}))
 Laya.stage.addChild(sp);
+
 var a:JQuery = $("#gg");
 function doSmoeThings(t:Function,f:Function):void{
     var random:Number = Math.random()*10000;

@@ -67,13 +67,12 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map',
-  plugins: [
-    new BundleAnalyzerPlugin()
-  ]
+  devtool: '#eval-source-map'
 }
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   module.exports.mode = 'production'
+}else if(process.env.NODE_ENV === 'development'){
+  module.exports.mode = 'development'
 }
