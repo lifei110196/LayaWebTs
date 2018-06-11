@@ -2,3 +2,4 @@ node_modules
 .laya
 .vscode
 .git
+dist

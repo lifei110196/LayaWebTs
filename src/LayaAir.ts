@@ -1,9 +1,10 @@
 import '../bin/libs/min/laya.core.min' 
 import '../bin/libs/min/laya.ui.min'
 import '../bin/libs/min/laya.webgl.min'
-const Sprite = Laya.Sprite;
-const Event = Laya.Event;
-const WebGL = Laya.WebGL;
-const Handler = Laya.Handler;
+import Sprite = Laya.Sprite;
+import Event = Laya.Event;
+import WebGL = Laya.WebGL;
+import Handler = Laya.Handler;
+import Stage = Laya.Stage;
 
-export {Sprite,Event,WebGL,Handler}
+export {Sprite,Event,WebGL,Handler,Stage}
