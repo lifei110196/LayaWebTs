@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const babelOptions = {
   "presets": [
     ["env", {
@@ -21,14 +22,13 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'vue-style-loader',
           'css-loader'
         ],
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: [/node_modules/,/bin/]
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -57,10 +57,7 @@ module.exports = {
     ]
   },
   resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js'
-    },
-    extensions: ['*', '.js', '.vue', '.json','.ts','.tsx']
+    extensions: ['*','.js','.json','.ts','.tsx']
   },
   devServer: {
     historyApiFallback: true,
@@ -70,20 +67,13 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  plugins: [
+    new BundleAnalyzerPlugin()
+  ]
 }
 
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
-  // http://vue-loader.vuejs.org/en/workflow/production.html
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
-  ])
+  module.exports.mode = 'production'
 }

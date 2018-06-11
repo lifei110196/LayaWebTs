@@ -37,6 +37,3 @@ myTest().then(v=>{
 }).catch(e=>{
     console.log(e);
 })
-var x:hehe = new hehe("李飞",28)
-
-export{Sprite,Event};
