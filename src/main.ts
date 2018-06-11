@@ -1,17 +1,17 @@
 import {Sprite,WebGL,Event,Handler,Stage} from './LayaAir';
 import { TestPageView } from './View/TestPageView';
 import { StepUtils } from './Utils/StepUtils';
+import { GameBord } from './Game/2048/GameBord';
 
 function main():void{
-    Laya.init(1280,720,WebGL);//初始化引擎
+    Laya.init(640,1010,WebGL);//初始化引擎
     
     Laya.stage.scaleMode = Stage.SCALE_FIXED_HEIGHT;//固定高度
-    Laya.stage.screenMode = Stage.SCREEN_HORIZONTAL;//自动横屏
-
-    Laya.loader.load("../bin/res/atlas/comp.atlas",Handler.create(this,()=>{
-        var t:TestPageView = new TestPageView();
-        Laya.stage.addChild(t);
-    }))
+    Laya.stage.scaleMode = Stage.SCALE_SHOWALL;
+    Laya.stage.alignH = Stage.ALIGN_CENTER;
+    Laya.stage.alignV = Stage.ALIGN_MIDDLE;
+    Laya.stage.bgColor = "#000000";
+    Laya.stage.addChild(new GameBord);
 }
 main();
 

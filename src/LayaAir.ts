@@ -6,5 +6,8 @@ import Event = Laya.Event;
 import WebGL = Laya.WebGL;
 import Handler = Laya.Handler;
 import Stage = Laya.Stage;
+import Text = Laya.Text;
+import Tween = Laya.Tween;
+import Stat = Laya.Stat;
 
-export {Sprite,Event,WebGL,Handler,Stage}
+export {Sprite,Event,WebGL,Handler,Stage,Text,Tween,Stat}
