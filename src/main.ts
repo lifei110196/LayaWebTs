@@ -1,11 +1,25 @@
-import {Sprite,WebGL,Event,Handler,Stage} from './LayaAir';
-import { TestPageView } from './View/TestPageView';
+import {WebGL,Stage} from './LayaAir';
 import { StepUtils } from './Utils/StepUtils';
 import { GameBord } from './Game/2048/GameBord';
-
+import * as ioClient  from 'socket.io-client'
+var chat = ioClient.connect('http://localhost:8087/chat')
+    // , news = ioClient.connect('http://localhost:8087/news');
+  
+  chat.on('connect', function () {
+    chat.emit('hi!');
+  });
+  
+//   news.on('news', function () {
+//     news.emit('woot');
+//   });
+  chat.on("item",(dt:any)=>{
+    console.log(dt,1);
+  })
+//   news.on("item",(dt:any)=>{
+//     console.log(dt,2);
+//   })
 function main():void{
     Laya.init(640,1010,WebGL);//初始化引擎
-    
     Laya.stage.scaleMode = Stage.SCALE_FIXED_HEIGHT;//固定高度
     Laya.stage.scaleMode = Stage.SCALE_SHOWALL;
     Laya.stage.alignH = Stage.ALIGN_CENTER;

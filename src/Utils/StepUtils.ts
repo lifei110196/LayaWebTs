@@ -1,3 +1,4 @@
+import {Promise} from 'es6-promise'
 export class StepUtils{
     constructor(){
 
