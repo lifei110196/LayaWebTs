@@ -10,7 +10,7 @@ export class GameBord extends Sprite{
     private endY:number = null;
     private cells:Array<Array<GameCell>> = [];
     private newFlag:boolean = false;
-    private gameOver:Array<boolean> = [];
+    private gameOver:Array<boolean> = [true,true,true,true];
     constructor(){
         super();
         this.init();
