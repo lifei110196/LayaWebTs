@@ -1,5 +1,5 @@
-node_modules
-.laya
-.vscode
-.git
-dist
+client/node_modules
+client/.laya
+client/.vscode
+client/.git
+client/dist
