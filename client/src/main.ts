@@ -2,17 +2,17 @@ import {WebGL,Stage} from './LayaAir';
 import { StepUtils } from './Utils/StepUtils';
 import { GameBord } from './Game/2048/GameBord';
 import * as ioClient  from 'socket.io-client'
-var chat = ioClient.connect('http://localhost:8087/chat')
+var chat = ioClient.connect('http://localhost:8087')
     // , news = ioClient.connect('http://localhost:8087/news');
   
   chat.on('connect', function () {
-    chat.emit('hi!');
+    chat.emit('hi!',{data:"hello server"});
   });
   
 //   news.on('news', function () {
 //     news.emit('woot');
 //   });
-  chat.on("item",(dt:any)=>{
+  chat.on("sbhugao",(dt:any)=>{
     console.log(dt,1);
   })
 //   news.on("item",(dt:any)=>{
