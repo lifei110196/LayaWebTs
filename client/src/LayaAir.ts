@@ -9,5 +9,5 @@ import Stage = Laya.Stage;
 import Text = Laya.Text;
 import Tween = Laya.Tween;
 import Stat = Laya.Stat;
-
-export {Sprite,Event,WebGL,Handler,Stage,Text,Tween,Stat}
+import Utils = Laya.Utils;
+export {Sprite,Event,WebGL,Handler,Stage,Text,Tween,Stat,Utils}

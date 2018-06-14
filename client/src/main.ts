@@ -1,5 +1,5 @@
-import {WebGL,Stage} from './LayaAir';
-import { StepUtils } from './Utils/StepUtils';
+import {WebGL,Stage,Event} from './LayaAir';
+import { MyUtils } from './Utils/MyUtils';
 import { GameBord } from './Game/2048/GameBord';
 import * as ioClient  from 'socket.io-client'
 var chat = ioClient.connect('http://localhost:8087')
@@ -25,7 +25,10 @@ function main():void{
     Laya.stage.alignH = Stage.ALIGN_CENTER;
     Laya.stage.alignV = Stage.ALIGN_MIDDLE;
     Laya.stage.bgColor = "#000000";
-    Laya.stage.addChild(new GameBord);
+    // Laya.stage.addChild(new GameBord);
+    Laya.stage.on(Event.CLICK,this,()=>{
+        console.log(MyUtils.calcDirByDelta(Laya.stage.mouseX-320,Laya.stage.mouseY-505));
+    })
 }
 main();
 
@@ -37,8 +40,8 @@ function doSmoeThings(t:Function,f:Function):void{//异步执行方法
 }
 async function myTest(){//顺序执行异步方法
     var a:Number = 0;
-    a += await StepUtils.getPlace(doSmoeThings);
-    a += await StepUtils.getPlace(doSmoeThings);
+    a += await MyUtils.getPlace(doSmoeThings);
+    a += await MyUtils.getPlace(doSmoeThings);
     return a;
 }
 myTest().then(v=>{

@@ -1,5 +1,5 @@
 import {Promise} from 'es6-promise'
-export class StepUtils{
+export class MyUtils{
     constructor(){
 
     }

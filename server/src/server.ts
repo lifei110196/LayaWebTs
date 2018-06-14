@@ -1,4 +1,4 @@
-import { StepUtils } from "./Utils/StepUtils";
+import { MyUtils } from "./Utils/StepUtils";
 import SocketIO = require('socket.io');
 import http = require('http');
 import express = require('express');
@@ -20,8 +20,8 @@ function doSmoeThings(t:Function,f:Function):void{//异步执行方法
 }
 async function myTest(){//顺序执行异步方法
     var a:Number = 0;
-    a += await StepUtils.getPlace(doSmoeThings);
-    a += await StepUtils.getPlace(doSmoeThings);
+    a += await MyUtils.getPlace(doSmoeThings);
+    a += await MyUtils.getPlace(doSmoeThings);
     return a;
 }
 myTest().then(v=>{
