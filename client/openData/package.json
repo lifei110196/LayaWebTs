@@ -1,0 +1,36 @@
+{
+  "name": "my-project",
+  "description": "LayaWebTs",
+  "version": "1.0.0",
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules --mode production",
+    "watch": "cross-env NODE_ENV=development webpack --progress  --hide-modules --watch",
+    "analyz": "cross-env NODE_ENV=production npm_config_report=true npm run build",
+    "watch2": "cross-env NODE_ENV=development webpack --progress  --hide-modules --watch --config webpack.config2.js"
+  },
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "devDependencies": {
+    "@types/es6-promise": "^3.3.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "cross-env": "^5.0.5",
+    "file-loader": "^1.1.4",
+    "ts-loader": "^4.4.0",
+    "typescript": "^2.9.1",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.3",
+    "webpack-dev-server": "^3.1.4"
+  }
+}

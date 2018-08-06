@@ -10,10 +10,10 @@ const babelOptions = {
   ]
 }
 module.exports = {
-  entry: {index:'./src/main.ts'},
+  entry: { index: './src/main.ts' },
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    path: path.resolve(__dirname, './wx/js'),
+    publicPath: '',
     filename: '[name].js'
   },
   module: {

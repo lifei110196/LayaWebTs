@@ -3,5 +3,10 @@ client/.laya
 client/.vscode
 client/.git
 client/dist
+client/openData/node_modules
+client/openData/.laya
+client/openData/.vscode
+client/openData/.git
+client/openData/dist
 server/node_modules
 server/dist
